@@ -1,0 +1,109 @@
+.gallery-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 20px;
+  .preloader {
+    width: 70px;
+    height: 70px;
+    border: 3px solid $green-c;
+    border-top-color: rgba(#ccc, 0.5);
+    border-right-color: rgba(#ccc, 0.5);
+    border-bottom-color: rgba(#ccc, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+  .controls {
+    @include cf;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    //
+    // State: isOpen
+    //
+    &.isOpen {
+      a {
+        width: 25%;
+        height: 100px;
+        line-height: 100px;
+        //
+        // Responsive
+        //
+        @include mq($until: tablet) {
+          float: none;
+          width: 100%;
+          height: 100px;
+          line-height: 100px;
+        }
+      }
+    }
+    a {
+      //
+      // State: isActive
+      //
+      &.isActive {
+        box-shadow: inset 0 0 50px rgba(255,255,255,0.4);
+      }
+      float: left;
+      display: block;
+      width: 50%;
+      height: 300px;
+      line-height: 300px;
+      text-transform: uppercase;
+      font-size: 24px;
+      text-align: center;
+      color: #fff;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      &:first-child {
+        background-image: url("../images/UI/gallery/controls/rFIe0CCt_LA.jpg");
+      }
+      &:nth-child(2) {
+        background-image: url("../images/UI/gallery/controls/ytExUpie6zE.jpg");
+      }
+      &:nth-child(3) {
+        background-image: url("../images/UI/gallery/controls/third.jpg");
+      }
+      &:nth-child(4) {
+        background-image: url("../images/UI/gallery/controls/fourth.jpg");
+      }
+      //
+      // Responsive
+      //
+      @include mq($until: desktop) {
+        background-size: cover;
+      }
+      @include mq($until: tablet) {
+        float: none;
+        width: 100%;
+        height: 150px;
+        line-height: 150px;
+      }
+    }
+  }
+  .gallery {
+    display: none;
+    //
+    // State: isVisible
+    //
+    &.isVisible {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      overflow: hidden;
+    }
+
+    a {
+      display: block;
+      flex-basis: 20%;
+      margin-bottom: 20px;
+      img {
+        max-width: 100%;
+        display: block;
+        height: auto;
+      }
+    }
+
+  }
+
+}

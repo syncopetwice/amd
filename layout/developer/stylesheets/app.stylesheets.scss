@@ -1,0 +1,84 @@
+//
+// MOBILE FIRST PRINCIPE
+//
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300&subset=latin,cyrillic);
+// Defaults
+@import "vendor/normalize-scss/fork-versions/default/_normalize.scss";
+@import "vendor/sass-mq/_mq.scss";
+// Libs
+@import "vendor/css-hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "vendor/preloaders/_preloaders.scss";
+@import "vendor/hover/scss/hover.scss";
+
+// @import "vendor/animate/animate.min.scss";
+
+// Vars
+$green-c: #66b446;
+$black-c: #222831;
+$gray-c : #393e46;
+$white-c: #eee;
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $black-c;
+  background: #f9f9f9;
+}
+body {
+  a {
+    text-decoration: none;
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -ms-touch-action: none;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+#application {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  min-height: 100vh;
+  // Modules
+  @import "modules/header/_header.scss";
+  @import "modules/_banner.scss";
+  @import "modules/_main.scss";
+  @import "modules/footer/_.scss";
+  @import "modules/gallery/_gallery.scss";
+}
+
+// Utils
+.u-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq($until: grid) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

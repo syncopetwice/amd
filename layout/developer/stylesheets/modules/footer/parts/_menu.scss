@@ -1,0 +1,67 @@
+.menu {
+  margin-left: 20px;
+  margin-right: 20px;
+  .list {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    list-style-type: none;
+    .list-item {
+      border-bottom: 1px solid #353535;
+      position: relative;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-color: transparent transparent transparent lighten(#353535, 10%);
+      }
+      a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        color: #fff;
+      }
+      // States
+      &.isOpen {
+        & > a {
+          color: #4eb655;
+        }
+        &:after {
+          top: 20px;
+          border-width: 5px 5px 0 5px;
+          border-color: #4eb655 transparent transparent transparent;
+        }
+        .list--inner {
+          display: block;
+        }
+      }
+    }
+    // List :: Inner
+    .list--inner {
+      display: none;
+      background-color: lighten(#272727, 5%);
+      padding: 0 10px 0 10px;
+      list-style-type: none;
+      margin: 5px 0 15px 0;
+      li {
+        border-bottom-color: #4f4f4f;
+        &:last-child {
+          border-bottom: 0;
+        }
+        a {
+          color: #eee;
+        }
+      }
+    }
+  }
+}

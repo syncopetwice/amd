@@ -1,0 +1,22 @@
+.banner {
+  min-height: 500px;
+  background-image: url("../images/UI/banner.png");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+    @include mq($from: desktop) {
+      font-size: 40px;
+      line-height: 60px;
+    }
+  }
+}

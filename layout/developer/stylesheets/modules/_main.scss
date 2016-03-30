@@ -1,0 +1,19 @@
+#main {
+  flex: 1;
+  flex-basis: auto;
+  @include mq($from: desktop) {
+    margin-top: 0;
+  }
+
+  // Owl Slider
+  #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  
+  // Pages
+  @import "../pages/contacts.scss";
+
+}
